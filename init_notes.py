@@ -20,14 +20,11 @@ if args.d:
 else:
     base_folder = DEFAULT_BASE_FOLDER
 
-print(base_folder)
-
 if args.i:
     base_folder = os.path.join(base_folder, args.i)
 
 # Creating folder structure
 base_path = os.path.join(base_folder, args.projName)
-print(base_path)
 
 if not os.path.exists(base_path):
     os.mkdir(base_path)
