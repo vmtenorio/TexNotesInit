@@ -22,6 +22,8 @@ else:
 
 if args.i:
     base_folder = os.path.join(base_folder, args.i)
+    if not os.path.exists(base_folder):
+        os.mkdir(base_folder)
 
 # Creating folder structure
 base_path = os.path.join(base_folder, args.projName)
