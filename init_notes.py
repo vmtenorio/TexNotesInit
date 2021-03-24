@@ -1,11 +1,16 @@
 import os
-from shutil import copyfile
 import argparse
+from string import Template
 
 # Some constants and defaults
 HOME_FOLDER = os.path.expanduser('~')
 DEFAULT_BASE_FOLDER = os.path.join(HOME_FOLDER, 'Dropbox', 'TexNotes') 
 TEMPLATE_FILE_NAME = 'template.tex'
+
+def read_template(path):
+    with open(path, 'r') as f:
+        template = f.read()
+    return Template(template)
 
 parser = argparse.ArgumentParser(description="Latex Notes projects initializer")
 
@@ -44,5 +49,9 @@ if not os.path.exists(img_path):
 tex_fname = args.projName.replace(' ', '_').lower() + '.tex'
 tex_filepath = os.path.join(base_path, tex_fname)
 if not os.path.exists(tex_filepath):
-    copyfile(TEMPLATE_FILE_NAME, tex_filepath)
+    template = read_template(TEMPLATE_FILE_NAME)
+    print(template)
+    print(template.substitute(TITLE=args.projName))
+    with open(tex_filepath, 'w') as f:
+        f.write(template.substitute(TITLE=args.projName))
 
