@@ -50,8 +50,6 @@ tex_fname = args.projName.replace(' ', '_').lower() + '.tex'
 tex_filepath = os.path.join(base_path, tex_fname)
 if not os.path.exists(tex_filepath):
     template = read_template(TEMPLATE_FILE_NAME)
-    print(template)
-    print(template.substitute(TITLE=args.projName))
     with open(tex_filepath, 'w') as f:
         f.write(template.substitute(TITLE=args.projName))
 
