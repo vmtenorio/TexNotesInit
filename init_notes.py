@@ -4,7 +4,7 @@ import argparse
 
 # Some constants and defaults
 HOME_FOLDER = os.path.expanduser('~')
-DEFAULT_BASE_FOLDER = os.path.join(HOME_FOLDER, 'Documents', 'TexNotes') 
+DEFAULT_BASE_FOLDER = os.path.join(HOME_FOLDER, 'Dropbox', 'TexNotes') 
 TEMPLATE_FILE_NAME = 'template.tex'
 
 parser = argparse.ArgumentParser(description="Latex Notes projects initializer")
