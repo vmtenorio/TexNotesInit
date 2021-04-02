@@ -1,7 +1,6 @@
 \documentclass[a4paper,12pt]{report}
 
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
 \usepackage[spanish]{babel}
 \usepackage{amsmath, amssymb}
 \usepackage{hyperref}
@@ -16,6 +15,8 @@
 \fancyhead[L]{Víctor Manuel Tenorio Gómez}
 
 \usepackage{lmodern}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -50,6 +51,7 @@
 \title{${TITLE}}
 \author{Víctor Manuel Tenorio Gómez}
 
+\graphicspath{{./img/}}
 
 \begin{document}
 
